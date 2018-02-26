@@ -28,6 +28,9 @@ public class LearnAWT extends Frame
                 
 		        b = new Button("Add"); 
 		        b.setBounds(110,170,60,40);
+
+                        mul = new Button("Multiple"); 
+		        mul.setBounds(110,220,60,40);
 		        
 		        bex = new Button("EXIT");
 		        bex.setBounds(110, 220, 60, 40);
@@ -39,6 +42,7 @@ public class LearnAWT extends Frame
 		        l1.setBounds(100, 130, 100, 20);
 		         
 		        add(b);
+                        add(mul);
 		        add(bex);
 		        add(bclr);
 		        add(tf1); 
@@ -59,9 +63,23 @@ public class LearnAWT extends Frame
 		                    int c = a + b;
 		                    
 		                    l1.setText("Their sum is = " + String.valueOf(c));     
+		               }        
+                        }); 
+
+                        // action code for multiple click button
+                        mul.addActionListener(new ActionListener()
+		        {
+		               public void actionPerformed(ActionEvent e)
+		               { 
+		                    int a = Integer.parseInt(tf1.getText());
+		                    int b = Integer.parseInt(tf2.getText()); 
+		                    int c = a * b;
+		                    
+		                    l1.setText("Their Product is = " + String.valueOf(c));     
 		               }
 		        }); 
 		        
+
 		        bex.addActionListener(new ActionListener()
 		        {
 		               public void actionPerformed(ActionEvent e)
